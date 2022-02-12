@@ -26,7 +26,8 @@
             string type = GetType(d);
             string name = d[0];
 
-            var origin = string.Format("public {0} {1}", type, name) + " { get; set; }";
+            var origin = text.Contains("NOT NULL") ? "[Required]\r\n" : string.Empty;
+            origin += $"public {type} {name}" + " { get; set; }";
 
             editText = editText.Replace(text, origin);
         }

@@ -9,9 +9,10 @@ namespace ConsoleApp1
         private const string EDIT_FILE = "EditFile.txt";
         private const string EDITED_FILE = "EditedFile.txt";
         private static string editText = string.Empty;
+
         static void Main(string[] args)
         {
-            var sw = 2;
+            var sw = 4;
 
             switch (sw)
             {
