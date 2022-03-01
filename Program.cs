@@ -12,7 +12,7 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            var sw = 4;
+            var sw = 2;
 
             switch (sw)
             {

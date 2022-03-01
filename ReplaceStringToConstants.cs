@@ -43,6 +43,27 @@ namespace ConsoleApp1
                 new Regex("\"topmostSubform\\[[0-9]+]\\.[a-zA-Z]+[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\\\\\.P[0-9]+_[0-9]+_\\\\\\\\\\.([a-zA-Z]+(_[a-zA-Z]+)+)_[0-9]+_\\[[0-9]+]\"", RegexOptions.IgnoreCase),
                 new Regex("\\{\"(?:[^\"]|\"\")*\",", RegexOptions.IgnoreCase),
                 new Regex("AcordFormFieldDto\\(\"(?:[^\"]|\"\")*\",", RegexOptions.IgnoreCase),
+
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.([a-zA-Z]+(_[a-zA-Z]+)+)\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.[a-zA-Z]+\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P1\\[[0-9]+]\\.topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.[a-zA-Z]+_[a-zA-Z]+\\[[0-9]+]\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\.P[0-9]+_0__\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[0-9]+_\\[[0-9]+]\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\.P[0-9]+_[0-9]+_\\\\\\.([a-zA-Z]+(_[a-zA-Z]+)+)\\[[0-9]+]\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("topmostSubform\\[[0-9]+]_Page[0-9]+\\[[0-9]+]_F_[0-9]+_\\\\\\\\_P[0-9]+_[0-9]+_\\\\\\\\_([a-zA-Z]+(_[a-zA-Z]+)+)\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.[a-zA-Z]+_[a-zA-Z]+\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.([a-zA-Z]+(_[a-zA-Z]+)+)\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\\\\\.P[0-9]+_[0-9]+_\\\\\\\\\\.([a-zA-Z]+(_[a-zA-Z]+)+)_[0-9]+_\\[[0-9]+]\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\\\\\.P[0-9]+_[0-9]+_\\\\\\\\\\.([a-zA-Z]+(_[a-zA-Z]+)+)\\[[0-9]+]\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("topmostSubform\\[[0-9]+]_Page[0-9]+\\[[0-9]+]_F_[0-9]+_\\\\\\\\\\\\\\\\_P[0-9]+_[0-9]+_\\\\\\\\\\\\\\\\_([a-zA-Z]+(_[a-zA-Z]+)+)\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("([a-zA-Z]+(_[a-zA-Z]+)+)_[0-9]+_\\[[0-9]+]\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.FIELD[0-9]+\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.([a-zA-Z]+(_[a-zA-Z]+)+)_\\{[0-9]+\\}", RegexOptions.IgnoreCase),
+                new Regex("topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\\\\\.P[0-9]+_[0-9]+_\\\\\\\\\\.[a-zA-Z]+_[a-zA-Z]+_", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.[a-zA-Z]+_[a-zA-Z]+_\"", RegexOptions.IgnoreCase),
+                new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.([a-zA-Z]+(_[a-zA-Z]+)+)_\"", RegexOptions.IgnoreCase),
+                new Regex("topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\\\\\.P[0-9]+_[0-9]+_\\\\\\\\\\.([a-zA-Z]+(_[a-zA-Z]+)+)_", RegexOptions.IgnoreCase),
+                new Regex("topmostSubform\\[[0-9]+]\\.[a-zA-Z]+[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\\\\\.P[0-9]+_[0-9]+_\\\\\\\\\\.([a-zA-Z]+(_[a-zA-Z]+)+)_[0-9]+_\\[[0-9]+]", RegexOptions.IgnoreCase),
+
             };
 
             var temp = edText.Split("\r\n");
