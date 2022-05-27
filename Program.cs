@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NC_Helper;
+using System;
 using System.IO;
 using System.Text;
 
@@ -10,13 +11,23 @@ namespace ConsoleApp1
         private const string EDITED_FILE = "EditedFile.txt";
         private static string editText = string.Empty;
 
+        private enum HelperTypes
+        {
+            replace_string_to_constants_by_console_typing,
+            replace_string_to_constants,
+            replace_old_code_to_new_code,
+            Convert_DB_Class_To_CSharp_Class,
+            Convert_string_to_dictionary,
+            Replace_string_to_string,
+            Find_duplicate,
+            Find_duplicate_by_console,
+        }
+
         static void Main(string[] args)
         {
-            var sw = 2;
-
-            switch (sw)
+            switch (HelperTypes.Find_duplicate_by_console)
             {
-                case 1:
+                case HelperTypes.replace_string_to_constants_by_console_typing:
                     // replace string to constants by console typing
                     while (true)
                     {
@@ -44,7 +55,7 @@ namespace ConsoleApp1
                         }
                     }
                     break;
-                case 2:
+                case HelperTypes.replace_string_to_constants:
                     // replace string to constants
                     ReadEditFile();
 
@@ -52,7 +63,7 @@ namespace ConsoleApp1
 
                     WriteEditFile();
                     break;
-                case 3:
+                case HelperTypes.replace_old_code_to_new_code:
                     //replace old code to new code
                     ReadEditFile();
 
@@ -60,7 +71,7 @@ namespace ConsoleApp1
 
                     WriteEditFile();
                     break;
-                case 4:
+                case HelperTypes.Convert_DB_Class_To_CSharp_Class:
                     // Convert DB Class To CSharp Class
                     ReadEditFile();
 
@@ -68,13 +79,33 @@ namespace ConsoleApp1
 
                     WriteEditFile();
                     break;
-                case 5:
+                case HelperTypes.Convert_string_to_dictionary:
                     // Convert string to dictionary
                     ReadEditFile();
 
                     editText = StringToDictionary.ConvertStringToDictionary(editText);
 
                     WriteEditFile();
+                    break;
+                case HelperTypes.Replace_string_to_string:
+                    // Replace string to string
+                    ReadEditFile();
+
+                    editText = ReplaceStringToString.Replace(editText, ");");
+
+                    WriteEditFile();
+                    break;
+                case HelperTypes.Find_duplicate:
+                    // Find duplicate
+                    ReadEditFile();
+
+                    editText = FIndDuplicate.Find(editText);
+
+                    WriteEditFile();
+                    break;
+                case HelperTypes.Find_duplicate_by_console:
+                    // Find duplicate by console
+                    FIndDuplicate.FingWithConsole();
                     break;
                 default:
                     break;

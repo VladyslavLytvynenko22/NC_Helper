@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
@@ -16,6 +15,9 @@ namespace ConsoleApp1
         private static Dictionary<string, string> newProperties = new Dictionary<string, string>();
         private static Dictionary<string, string> properties = new Dictionary<string, string>();
         private const int THRED_COUNT = 16;
+        private const string AcordFormFieldsConst = "AcordFormFields.";
+
+        private static string secretKey = "TopSecretPassword!!!!!!!!..........!!!!! !!!.....";
         public static string EditText(string edText)
         {
             GetConstants();
@@ -63,65 +65,23 @@ namespace ConsoleApp1
                 new Regex("F\\[[0-9]+]\\.P[0-9]+\\[[0-9]+]\\.([a-zA-Z]+(_[a-zA-Z]+)+)_\"", RegexOptions.IgnoreCase),
                 new Regex("topmostSubform\\[[0-9]+]\\.Page[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\\\\\.P[0-9]+_[0-9]+_\\\\\\\\\\.([a-zA-Z]+(_[a-zA-Z]+)+)_", RegexOptions.IgnoreCase),
                 new Regex("topmostSubform\\[[0-9]+]\\.[a-zA-Z]+[0-9]+\\[[0-9]+]\\.F_[0-9]+_\\\\\\\\\\.P[0-9]+_[0-9]+_\\\\\\\\\\.([a-zA-Z]+(_[a-zA-Z]+)+)_[0-9]+_\\[[0-9]+]", RegexOptions.IgnoreCase),
+                new Regex("\"[a-zA-Z]+_[a-zA-Z]+_\"", RegexOptions.IgnoreCase),
+                new Regex("\"[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_\"", RegexOptions.IgnoreCase),
+                new Regex("\"F_0_P[0-9]+_0_([a-zA-Z]+(_[a-zA-Z]+)+)_\"", RegexOptions.IgnoreCase),
+                new Regex("\"F_0_P[0-9]+_0_[a-zA-Z]+__[a-zA-Z]+_[a-zA-Z]+_\"", RegexOptions.IgnoreCase),
+
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.F_0_P[0-9]+_0_([a-zA-Z]+(_[a-zA-Z]+)+)_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.F_0_P[0-9]+_0_[a-zA-Z]+__[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
 
             };
 
-            var temp = edText.Split("\r\n");
+            edText = Checking(reg, edText);
 
-            if (true)
-            {
-                edText = Checking(reg, edText);
-            }
-            else if (temp.Length < THRED_COUNT)
-            {
-                edText = Checking(reg, edText);
-            }
-            else
-            {
-                int rowsCount = temp.Count();
+            var rex = new Regex(secretKey);
 
-                int rowsCountPerThred = rowsCount / THRED_COUNT;
-
-                List<Task<string>> TaskList = new List<Task<string>>();
-
-                for (int i = 0; i <= THRED_COUNT; i++)
-                {
-                    var tmp = temp.Skip(i * rowsCountPerThred);
-
-                    var thredText = i == THRED_COUNT ? tmp : tmp.Take(rowsCountPerThred);
-
-                    var tempText = string.Join("\r\n", thredText);
-
-                    var LastTask = new Task<string>(() =>
-                    {
-                        string textInThred = null;
-
-                        foreach (var item in reg)
-                        {
-                            textInThred = CheckRegex(item, tempText);
-                        }
-
-                        return textInThred;
-                    });
-
-                    LastTask.Start();
-                    TaskList.Add(LastTask);
-
-                }
-
-                Task.WaitAll(TaskList.ToArray());
-
-                edText = "";
-
-                foreach (var task in TaskList)
-                {
-                    edText += task.Result;
-                }
-
-            }
-
-
-
+            edText = rex.Replace(edText, AcordFormFieldsConst);
 
             WriteConstants();
 
@@ -150,7 +110,22 @@ namespace ConsoleApp1
                     {
                         var text = grp[0].Value;
 
-                        editText = ReplaceText(text.Replace("{", "").Replace(",", "").Replace("AcordFormFieldDto(", ""), editText);
+                        text = text
+                            .Replace("{", "")
+                            .Replace(",", "")
+                            .Replace("AcordFormFieldDto(", "");
+
+                        var constValue = text
+                            .Replace("\"", "")
+                            .Replace(AcordFormFieldsConst, "")
+                            .Replace(",", "");
+
+                        if (constValue.StartsWith("F_0_P"))
+                        {
+                            constValue = $"F[0].P{constValue[5]}[{constValue[7]}]." + constValue.Substring(9);
+                        }
+
+                        editText = ReplaceText(text, constValue, editText);
                     }
 
                 } while (regex.IsMatch(editText));
@@ -159,11 +134,11 @@ namespace ConsoleApp1
             return editText;
         }
 
-        private static string ReplaceText(string replaceText, string editText)
+        private static string ReplaceText(string replaceText, string constValue, string editText)
         {
-            var propertyName = GetPropertyName(replaceText.Replace("\"", ""));
+            var propertyName = GetPropertyName(constValue);
 
-            return editText.Replace(replaceText, "AcordFormFields." + propertyName);
+            return editText.Replace(replaceText, secretKey + propertyName);
         }
 
         private static string GetPropertyName(string replaceTexts)
