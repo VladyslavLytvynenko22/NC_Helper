@@ -2723,6 +2723,8 @@
         public const string F_0_P1_0_Loss_ReportedToName_A_0_ = "F[0].P1[0].Loss_ReportedToName_A[0]";
         public const string F_0_P1_0_Loss_IncidentDescription_A_0_ = "F[0].P1[0].Loss_IncidentDescription_A[0]";
         public const string F_0_P1_0_Vehicle_ProducerIdentifier_A_0_ = "F[0].P1[0].Vehicle_ProducerIdentifier_A[0]";
+        public const string F_0_P1_0_Vehicle_ProducerIdentifier_A_1_ = "F[0].P1[0].Vehicle_ProducerIdentifier_A[1]";
+        public const string F_0_P1_0_Vehicle_ProducerIdentifier_A_2_ = "F[0].P1[0].Vehicle_ProducerIdentifier_A[2]";
         public const string F_0_P1_0_Vehicle_ModelYear_A_0_ = "F[0].P1[0].Vehicle_ModelYear_A[0]";
         public const string F_0_P1_0_Vehicle_ManufacturersName_A_0_ = "F[0].P1[0].Vehicle_ManufacturersName_A[0]";
         public const string F_0_P1_0_Vehicle_ModelName_A_0_ = "F[0].P1[0].Vehicle_ModelName_A[0]";
@@ -3356,7 +3358,7 @@
         public const string F_0_P1_0_Vehicle_ProducerIdentifier_C_0_ = "F[0].P1[0].Vehicle_ProducerIdentifier_C[0]";
         public const string F_0_P1_0_Vehicle_ModelYear_C_0_ = "F[0].P1[0].Vehicle_ModelYear_C[0]";
         public const string F_0_P1_0_Vehicle_ManufacturersName_C_0_ = "F[0].P1[0].Vehicle_ManufacturersName_C[0]";
-        public const string F_0_P1_0_Vehicle_ModelName_C_0_ = "F[0].P1[0].Vehicle_ModelName_C[0]";
+        public const string F_0_P3_0_Vehicle_ModelName_C_0_ = "F[0].P3[0].Vehicle_ModelName_C[0]";
         public const string F_0_P1_0_Vehicle_BodyCode_C_0_ = "F[0].P1[0].Vehicle_BodyCode_C[0]";
         public const string F_0_P1_0_Vehicle_VINIdentifier_C_0_ = "F[0].P1[0].Vehicle_VINIdentifier_C[0]";
         public const string F_0_P1_0_Vehicle_VehicleType_PrivatePassengerIndicator_C_0_ = "F[0].P1[0].Vehicle_VehicleType_PrivatePassengerIndicator_C[0]";
@@ -3508,7 +3510,7 @@
         public const string F_0_P3_0_Policy_BroadLineOfBusiness_PersonalIndicator_C_0_ = "F[0].P3[0].Policy_BroadLineOfBusiness_PersonalIndicator_C[0]";
         public const string F_0_P3_0_Vehicle_ModelYear_C_1_ = "F[0].P3[0].Vehicle_ModelYear_C[1]";
         public const string F_0_P3_0_Vehicle_ManufacturersName_C_1_ = "F[0].P3[0].Vehicle_ManufacturersName_C[1]";
-        public const string F_0_P1_0_Vehicle_ModelName_C_1_ = "F[0].P1[0].Vehicle_ModelName_C[1]";
+        public const string F_0_P3_0_Vehicle_ModelName_C_1_ = "F[0].P3[0].Vehicle_ModelName_C[1]";
         public const string F_0_P3_0_Vehicle_VINIdentifier_C_1_ = "F[0].P3[0].Vehicle_VINIdentifier_C[1]";
         public const string F_0_P3_0_Policy_BroadLineOfBusiness_CommercialIndicator_C_1_ = "F[0].P3[0].Policy_BroadLineOfBusiness_CommercialIndicator_C[1]";
         public const string F_0_P3_0_Policy_BroadLineOfBusiness_PersonalIndicator_C_1_ = "F[0].P3[0].Policy_BroadLineOfBusiness_PersonalIndicator_C[1]";
@@ -3722,6 +3724,7 @@
         public const string F_0_P2_0_ResidentialLocation_RiskLocation_InCityLimitsIndicator_A_0_ = "F[0].P2[0].ResidentialLocation_RiskLocation_InCityLimitsIndicator_A[0]";
         public const string F_0_P2_0_ResidentialLocation_RiskLocation_InFireDistrictIndicator_A_0_ = "F[0].P2[0].ResidentialLocation_RiskLocation_InFireDistrictIndicator_A[0]";
         public const string F_0_P2_0_ResidentialLocation_RiskLocation_InprivateSuburbIndicator_A_0_ = "F[0].P2[0].ResidentialLocation_RiskLocation_InprivateSuburbIndicator_A[0]";
+        public const string F_0_P2_0_ResidentialLocation_RiskLocation_InProtectedSuburbIndicator_A_0_ = "F[0].P2[0].ResidentialLocation_RiskLocation_InProtectedSuburbIndicator_A[0]";
         public const string F_0_P2_0_ResidentialLocation_RiskLocation_OtherIndicator_A_0_ = "F[0].P2[0].ResidentialLocation_RiskLocation_OtherIndicator_A[0]";
         public const string F_0_P2_0_ResidentialLocation_RiskLocation_OtherDescription_A_0_ = "F[0].P2[0].ResidentialLocation_RiskLocation_OtherDescription_A[0]";
         public const string F_0_P2_0_ResidentialStructure_Rating_ClassIndicator_A_0_ = "F[0].P2[0].ResidentialStructure_Rating_ClassIndicator_A[0]";
@@ -5670,6 +5673,7 @@
         public const string ResidentialLocation_RiskLocation_InCityLimitsIndicator_A = "ResidentialLocation_RiskLocation_InCityLimitsIndicator_A";
         public const string ResidentialLocation_RiskLocation_InFireDistrictIndicator_A = "ResidentialLocation_RiskLocation_InFireDistrictIndicator_A";
         public const string ResidentialLocation_RiskLocation_InprivateSuburbIndicator_A = "ResidentialLocation_RiskLocation_InprivateSuburbIndicator_A";
+        public const string ResidentialLocation_RiskLocation_InProtectedSuburbIndicator_A = "ResidentialLocation_RiskLocation_InProtectedSuburbIndicator_A";
         public const string ResidentialLocation_RiskLocation_OtherIndicator_A = "ResidentialLocation_RiskLocation_OtherIndicator_A";
         public const string ResidentialLocation_RiskLocation_OtherDescription_A = "ResidentialLocation_RiskLocation_OtherDescription_A";
         public const string ResidentialStructure_Rating_ClassIndicator_A = "ResidentialStructure_Rating_ClassIndicator_A";
@@ -7587,6 +7591,12 @@
         public const string CommercialStructure_Building_ProducerIdentifier_C = "CommercialStructure_Building_ProducerIdentifier_C";
         public const string CommercialStructure_PhysicalAddress_LineOne_C = "CommercialStructure_PhysicalAddress_LineOne_C";
         public const string CommercialStructure_PhysicalAddress_LineOne_ = "CommercialStructure_PhysicalAddress_LineOne_";
+        public const string CommercialStructure_PhysicalAddress_LineTwo_ = "CommercialStructure_PhysicalAddress_LineTwo_";
+        public const string CommercialStructure_PhysicalAddress_CityName_ = "CommercialStructure_PhysicalAddress_CityName_";
+        public const string CommercialStructure_PhysicalAddress_StateOrProvinceCode_ = "CommercialStructure_PhysicalAddress_StateOrProvinceCode_";
+        public const string CommercialStructure_PhysicalAddress_PostalCode_ = "CommercialStructure_PhysicalAddress_PostalCode_";
+        public const string CommercialStructure_PhysicalAddress_CountyName_ = "CommercialStructure_PhysicalAddress_CountyName_";
+        public const string BuildingOccupancy_OperationsDescription_ = "BuildingOccupancy_OperationsDescription_";
         public const string CommercialStructure_PhysicalAddress_LineTwo_C = "CommercialStructure_PhysicalAddress_LineTwo_C";
         public const string CommercialStructure_PhysicalAddress_CityName_C = "CommercialStructure_PhysicalAddress_CityName_C";
         public const string CommercialStructure_PhysicalAddress_CountyName_C = "CommercialStructure_PhysicalAddress_CountyName_C";
@@ -8573,6 +8583,27 @@
         public const string F_0_P1_0_Vehicle_TowingAndLabour_LimitAmount_ = "F[0].P1[0].Vehicle_TowingAndLabour_LimitAmount_";
         public const string F_0_P1_0_Vehicle_TransportationExpense_MaximumLimitAmount_ = "F[0].P1[0].Vehicle_TransportationExpense_MaximumLimitAmount_";
         public const string F_0_P1_0_Vehicle__Registration_StateOrProvinceCode_ = "F[0].P1[0].Vehicle__Registration_StateOrProvinceCode_";
+        public const string Vehicle__Registration_StateOrProvinceCode_ = "Vehicle__Registration_StateOrProvinceCode_";
+        public const string Vehicle_DrivenDaysPerWeekCount_ = "Vehicle_DrivenDaysPerWeekCount_";
+        public const string Vehicle_SeatBeltCode_ = "Vehicle_SeatBeltCode_";
+        public const string Vehicle_AirBagCode_ = "Vehicle_AirBagCode_";
+        public const string Vehicle_AntiLockBrakeCode_ = "Vehicle_AntiLockBrakeCode_";
+        public const string Vehicle_AntiTheftDeviceCode_ = "Vehicle_AntiTheftDeviceCode_";
+        public const string Vehicle_BodilyInjury_PerPersonLimitAmount_ = "Vehicle_BodilyInjury_PerPersonLimitAmount_";
+        public const string Vehicle_CombinedSingleLimit_EachAccidentAmount_ = "Vehicle_CombinedSingleLimit_EachAccidentAmount_";
+        public const string Vehicle_BodilyInjury_PerAccidentLimitAmount_ = "Vehicle_BodilyInjury_PerAccidentLimitAmount_";
+        public const string Vehicle_PropertyDamage_PerAccidentLimitAmount_ = "Vehicle_PropertyDamage_PerAccidentLimitAmount_";
+        public const string Vehicle_PIP_PerPersonLimitAmount_ = "Vehicle_PIP_PerPersonLimitAmount_";
+        public const string Vehicle_PIP_LimitAmount_ = "Vehicle_PIP_LimitAmount_";
+        public const string Vehicle_MedicalPayments_PerPersonLimitAmount_ = "Vehicle_MedicalPayments_PerPersonLimitAmount_";
+        public const string Vehicle_UninsuredUnderinsuredMotorists_CombinedSingleLimitPerAccidentLimitAmount_ = "Vehicle_UninsuredUnderinsuredMotorists_CombinedSingleLimitPerAccidentLimitAmount_";
+        public const string Vehicle_UninsuredUnderinsuredMotorists_PropertyDamagePerAccidentLimitAmount_ = "Vehicle_UninsuredUnderinsuredMotorists_PropertyDamagePerAccidentLimitAmount_";
+        public const string Vehicle_UninsuredUnderinsuredMotorists_PropertyDamageDeductibleAmount_ = "Vehicle_UninsuredUnderinsuredMotorists_PropertyDamageDeductibleAmount_";
+        public const string Vehicle_UninsuredUnderinsuredMotorists_BodilyInjuryPerPersonLimitAmount_ = "Vehicle_UninsuredUnderinsuredMotorists_BodilyInjuryPerPersonLimitAmount_";
+        public const string Vehicle_UninsuredUnderinsuredMotorists_BodilyInjuryPerAccidentLimitAmount_ = "Vehicle_UninsuredUnderinsuredMotorists_BodilyInjuryPerAccidentLimitAmount_";
+        public const string Vehicle_Comprehensive_DeductibleAmount_ = "Vehicle_Comprehensive_DeductibleAmount_";
+        public const string Vehicle_TowingAndLabour_LimitAmount_ = "Vehicle_TowingAndLabour_LimitAmount_";
+        public const string Vehicle_TransportationExpense_MaximumLimitAmount_ = "Vehicle_TransportationExpense_MaximumLimitAmount_";
 
         public const string Location_Building_SublocationDescription_A = "Location_Building_SublocationDescription_A";
         public const string Location_Building_SublocationDescription_ = "Location_Building_SublocationDescription_";
@@ -8900,6 +8931,7 @@
         public const string TopmostSubform_0_Page1_0_F_0_P1_0_Vehicle_OdometerReading_ = "topmostSubform[0].Page1[0].F_0_\\.P1_0_\\.Vehicle_OdometerReading_";
         public const string TopmostSubform_0_Page1_0_F_0_P1_0_Vehicle_AnnualMileCount_ = "topmostSubform[0].Page1[0].F_0_\\.P1_0_\\.Vehicle_AnnualMileCount_";
         public const string TopmostSubform_0_Page1_0_F_0_P1_0_Vehicle_RadiusOfUse_ = "topmostSubform[0].Page1[0].F_0_\\.P1_0_\\.Vehicle_RadiusOfUse_";
+        public const string TopmostSubform_0_Page1_0_F_0_P1_0_Vehicle_FarthestZoneCode_ = "topmostSubform[0].Page1[0].F_0_\\.P1_0_\\.Vehicle_FarthestZoneCode_";
         public const string TopmostSubform_0_Page1_0_F_0_P1_0_Vehicle_CostNewAmount_ = "topmostSubform[0].Page1[0].F_0_\\.P1_0_\\.Vehicle_CostNewAmount_";
         public const string TopmostSubform_0_Page1_0_F_0_P1_0_Vehicle_TotalPremiumAmount_ = "topmostSubform[0].Page1[0].F_0_\\.P1_0_\\.Vehicle_TotalPremiumAmount_";
         public const string TopmostSubform_0_Page1_0_F_0_P1_0_Vehicle_VehicleType_PrivatePassengerIndicator_ = "topmostSubform[0].Page1[0].F_0_\\.P1_0_\\.Vehicle_VehicleType_PrivatePassengerIndicator_";

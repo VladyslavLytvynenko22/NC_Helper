@@ -74,6 +74,10 @@ namespace ConsoleApp1
                 new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
                 new Regex("AcordFormFields\\.F_0_P[0-9]+_0_([a-zA-Z]+(_[a-zA-Z]+)+)_,", RegexOptions.IgnoreCase),
                 new Regex("AcordFormFields\\.F_0_P[0-9]+_0_[a-zA-Z]+__[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_\\s\\+", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_\\s\\+", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.F_0_P[0-9]+_0_([a-zA-Z]+(_[a-zA-Z]+)+)_\\s\\+", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.F_0_P[0-9]+_0_[a-zA-Z]+__[a-zA-Z]+_[a-zA-Z]+_\\s\\+", RegexOptions.IgnoreCase),
 
             };
 
@@ -113,11 +117,13 @@ namespace ConsoleApp1
                         text = text
                             .Replace("{", "")
                             .Replace(",", "")
+                            .Replace(" +", "")
                             .Replace("AcordFormFieldDto(", "");
 
                         var constValue = text
                             .Replace("\"", "")
                             .Replace(AcordFormFieldsConst, "")
+                            .Replace(" +", "")
                             .Replace(",", "");
 
                         if (constValue.StartsWith("F_0_P"))

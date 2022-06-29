@@ -25,7 +25,7 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            switch (HelperTypes.Find_duplicate_by_console)
+            switch (HelperTypes.Replace_string_to_string)
             {
                 case HelperTypes.replace_string_to_constants_by_console_typing:
                     // replace string to constants by console typing
