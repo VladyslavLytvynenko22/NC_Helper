@@ -35,6 +35,24 @@ namespace NC_Helper
                 await connection.InsertAsync(sampleFile);
             }
 
+            S3FileInfo s3File = new S3FileInfo(_s3Client, ConfigurationHelper.S3SiteInstanceName, sampleFile.Id.ToString().ToLower());
+
+            if (!s3File.Exists)
+            {
+                using (Stream s3Stream = s3File.Create())
+                {
+                    using (MemoryStream ms = new MemoryStream(bytes))
+                    {
+                        if (ms.CanSeek)
+                        {
+                            ms.Seek(0, SeekOrigin.Begin);
+                        }
+
+                        ms.CopyTo(s3Stream);
+                    }
+                }
+            }
+
             return true;
         }
     }
