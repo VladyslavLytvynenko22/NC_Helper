@@ -5,7 +5,7 @@ namespace NC_Helper
 {
     public class CopyFileToAWS
     {
-        private async Task<bool> CopyFile()
+        private async Task<bool> CopyFile(System.Data.IDbConnection connection)
         {
             var filePath = @"C:\Users\Vladyslav\Downloads\Acord-125-126-140-v2014-01.pdf";
             var fileGuid = new Guid("56FD2F34-AB9D-4715-B5A4-A262B1C9725A");
