@@ -7,10 +7,10 @@ namespace NC_Helper
     {
         private async Task<bool> CopyFile(System.Data.IDbConnection connection)
         {
-            var filePath = @"C:\Users\Vladyslav\Downloads\Acord-125-126-140-v2014-01.pdf";
-            var fileGuid = new Guid("56FD2F34-AB9D-4715-B5A4-A262B1C9725A");
-            var fileName = "Acord-125-126-140-v2014-01";
-            var fileDate = new DateTime(2014, 01, 01);
+            var filePath = @"C:\Users\Vladyslav\Downloads\Acord-125-126-140-v2016-01.pdf";
+            var fileGuid = new Guid("143165c7-54e2-4a4b-a05b-97a65120b3f1");
+            var fileName = "Acord-125-126-140-v2016-01";
+            var fileDate = new DateTime(2016, 01, 01);
 
 
 
@@ -33,6 +33,10 @@ namespace NC_Helper
             if (d == null)
             {
                 await connection.InsertAsync(sampleFile);
+            }
+            else
+            {
+                await connection.UpdateAsync(sampleFile);
             }
 
             S3FileInfo s3File = new S3FileInfo(_s3Client, ConfigurationHelper.S3SiteInstanceName, sampleFile.Id.ToString().ToLower());
