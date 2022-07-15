@@ -21,11 +21,14 @@ namespace ConsoleApp1
             Replace_string_to_string,
             Find_duplicate,
             Find_duplicate_by_console,
+            Add_Description_To_The_Class_Fields,
         }
 
         static void Main(string[] args)
         {
-            switch (HelperTypes.Replace_string_to_string)
+            var s = HelperTypes.Add_Description_To_The_Class_Fields;
+
+            switch (s)
             {
                 case HelperTypes.replace_string_to_constants_by_console_typing:
                     // replace string to constants by console typing
@@ -106,6 +109,10 @@ namespace ConsoleApp1
                 case HelperTypes.Find_duplicate_by_console:
                     // Find duplicate by console
                     FIndDuplicate.FingWithConsole();
+                    break;
+                case HelperTypes.Add_Description_To_The_Class_Fields:
+                    // Find duplicate by console
+                    AddDescriptionToTheClassFields.SetDescription();
                     break;
                 default:
                     break;
