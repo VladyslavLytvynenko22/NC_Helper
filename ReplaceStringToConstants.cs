@@ -12,9 +12,8 @@ namespace ConsoleApp1
     {
         //private  string editText = string.Empty;
         private const string CONSTANTS_FILE = "ConstantsFile.txt";
-        private static Dictionary<string, string> newProperties = new Dictionary<string, string>();
-        private static Dictionary<string, string> properties = new Dictionary<string, string>();
-        private const int THRED_COUNT = 16;
+        private static readonly Dictionary<string, string> newProperties = new Dictionary<string, string>();
+        private static readonly Dictionary<string, string> properties = new Dictionary<string, string>();
         private const string AcordFormFieldsConst = "AcordFormFields.";
 
         private static string secretKey = "TopSecretPassword!!!!!!!!..........!!!!! !!!.....";
@@ -71,8 +70,17 @@ namespace ConsoleApp1
                 new Regex("\"F_0_P[0-9]+_0_[a-zA-Z]+__[a-zA-Z]+_[a-zA-Z]+_\"", RegexOptions.IgnoreCase),
 
                 new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z],", RegexOptions.IgnoreCase),
                 new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+,", RegexOptions.IgnoreCase),
                 new Regex("AcordFormFields\\.F_0_P[0-9]+_0_([a-zA-Z]+(_[a-zA-Z]+)+)_,", RegexOptions.IgnoreCase),
+                new Regex("AcordFormFields\\.F_0_P[0-9]+_0_([a-zA-Z]+(_[a-zA-Z]+)+)+,", RegexOptions.IgnoreCase),
                 new Regex("AcordFormFields\\.F_0_P[0-9]+_0_[a-zA-Z]+__[a-zA-Z]+_[a-zA-Z]+_,", RegexOptions.IgnoreCase),
                 new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_\\s\\+", RegexOptions.IgnoreCase),
                 new Regex("AcordFormFields\\.[a-zA-Z]+_[a-zA-Z]+_[a-zA-Z]+_\\s\\+", RegexOptions.IgnoreCase),

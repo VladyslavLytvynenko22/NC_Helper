@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace NC_Helper
 {
-    public static class FIndDuplicate
+    public static class FindDuplicate
     {
         private static string secretKey = "TopSecretPassword!!!!!!!!..........!!!!! !!!.....";
 

@@ -1,21 +1,41 @@
-﻿namespace ConsoleApp1
+﻿using System;
+
+namespace ConsoleApp1
 {
     public static class DBClasToCSharpClass
     {
         private static string editText = string.Empty;
 
-        public static string ConvertDBClasToCSharpClass(string edtText)
+        public static bool ConvertDBClasToCSharpClass()
         {
-            editText = edtText;
-
-            var temp = editText.Split("\r\n");
-
-            foreach (var item in temp)
+            while (true)
             {
-                ReplaceText(item);
+                Console.WriteLine("");
+                Console.WriteLine("Enter text and Ctrl+z or type exit: ");
+
+                editText = Console.In.ReadToEnd();
+
+                if (!string.IsNullOrWhiteSpace(editText))
+                {
+                    if (editText == "exit")
+                    {
+                        break;
+                    }
+
+                    var temp = editText.Split("\r\n", StringSplitOptions.RemoveEmptyEntries);
+
+                    foreach (var item in temp)
+                    {
+                        ReplaceText(item);
+                    }
+
+                    Console.WriteLine(editText);
+
+                    TextCopy.ClipboardService.SetText(editText);
+                }
             }
 
-            return editText;
+            return true;
         }
 
         private static void ReplaceText(string text)
@@ -26,8 +46,7 @@
             string type = GetType(d);
             string name = d[0];
 
-            var origin = text.Contains("NOT NULL") ? "[Required]\r\n" : string.Empty;
-            origin += $"public {type} {name}" + " { get; set; }";
+            var origin = $"public {type} {name}" + " { get; set; }";
 
             editText = editText.Replace(text, origin);
         }
