@@ -26,7 +26,7 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            var s = HelperTypes.replace_string_to_constants;
+            var s = HelperTypes.Replace_string_to_string;
 
             switch (s)
             {
@@ -89,11 +89,7 @@ namespace ConsoleApp1
                     break;
                 case HelperTypes.Replace_string_to_string:
                     // Replace string to string
-                    ReadEditFile();
-
-                    editText = ReplaceStringToString.Replace(editText, ");");
-
-                    WriteEditFile();
+                    ReplaceStringToString.Replace(");");
                     break;
                 case HelperTypes.Find_duplicate:
                     // Find duplicate
