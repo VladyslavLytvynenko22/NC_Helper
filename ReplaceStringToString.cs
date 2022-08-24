@@ -86,6 +86,7 @@ namespace NC_Helper
                 new Regex(",\\s+(?!AcordFormFields)+[a-zA-Z]+[0-9]+\\.[a-zA-Z]+_[0-9]+_([a-zA-Z]+(_[a-zA-Z]+)+)[0-9]+[a-zA-Z]+_[0-9]+_([a-zA-Z]+(_[a-zA-Z]+)+)\\);", RegexOptions.IgnoreCase),
                 new Regex(",\\s+(?!AcordFormFields)+([a-zA-Z]+(\\.[a-zA-Z]+)+)\\);", RegexOptions.IgnoreCase),
                 new Regex(",\\s+(?!AcordFormFields)+[a-zA-Z]+\\.[a-zA-Z]+_[a-zA-Z]+\\.[a-zA-Z]+_[a-zA-Z]+\\.[a-zA-Z]+\\);", RegexOptions.IgnoreCase),
+                new Regex(",\\s+(?!AcordFormFields)(.*)\\);", RegexOptions.IgnoreCase),
             };
 
             foreach (var item in reg)
