@@ -22,11 +22,12 @@ namespace ConsoleApp1
             Find_duplicate,
             Find_duplicate_by_console,
             Add_Description_To_The_Class_Fields,
+            RazorConversor,
         }
 
         static void Main(string[] args)
         {
-            var s = HelperTypes.Replace_string_to_string;
+            var s = HelperTypes.Convert_DB_Class_To_CSharp_Class;
 
             switch (s)
             {
@@ -106,6 +107,10 @@ namespace ConsoleApp1
                 case HelperTypes.Add_Description_To_The_Class_Fields:
                     // Find duplicate by console
                     AddDescriptionToTheClassFields.SetDescription();
+                    break;
+                case HelperTypes.RazorConversor:
+                    // Find duplicate by console
+                    RazorConversor.ConvertAll("C:\\Projects\\nowcerts-web-app\\NowCerts.Sandbox\\bin\\Helpers\\IronPDFViews");
                     break;
                 default:
                     break;
